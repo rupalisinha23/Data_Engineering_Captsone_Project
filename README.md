@@ -7,10 +7,6 @@ This is a capstone project for the fulfilment of the requirements of Udacity Dat
 <b>NOTE:  Please refer to <i>write_up.pdf</i> file to follow the points asked in project rubric.</b>
 ## Introduction
 
-<img src="/img/airflow.png" width="100" height="50" align="justify" />
-<img src="/img/redshift.png" width="100" height="50" align="justify"/> 
-<img src="/img/pyspark.jpeg" width="100" height="50" align="justify"/>
-
 The project is developed to build an ETL pipeline using Apache Airlow, PySpark, Amazon Redshift. The data were given in .csv, .SAS and .sas7bdat formats. It were first pre-processed, converted to fit to star schema and then used to answer the four application based questions(also given in a separate section). <b><i>For more details, please refer to <i>write_up.pdf</i> to know about the rationality behind the design decisions taken throughout this project and to find the answers to the points raised in project rubric. </i></b>
 
 ## Data Modelling
@@ -128,7 +124,7 @@ The data pipeline has been successfully executed. Below are the answers to the 4
 <img src="capstone_results/max_household_size.png" align="justify" />
 
 <br>
-<b>Note: </b> Please refer to write_up.pdf for query statements used to fetch the results. 
-## Author
-* **Rupali Sinha** - *Initial work*
+<b>Note: </b> Please refer to write_up.pdf for query statements used to fetch the results. <br>
 
+### Authors
+* **Rupali Sinha** - *Initial work*
