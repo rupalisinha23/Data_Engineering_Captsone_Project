@@ -7,6 +7,12 @@ import os
 
 
 class AirportPreprocessOperator(BaseOperator):
+    """
+    This class is to define the pre-processing steps for 
+    airport codes data and puts them to pre_processed_csv folder.
+    After performing the preliminary analysis we find that no pre-processing
+    is required for the airport codes file.
+    """
 
     ui_color = '#89DA59'
 
@@ -32,7 +38,7 @@ class AirportPreprocessOperator(BaseOperator):
         
         logging.info('Reading the US cities demograph data in csv format.')
         df = pd.read_csv(self.input_path)
-  
+
         
         # save pre-processed data to csv
         logging.info('Saving the pre-processed file to csv...')

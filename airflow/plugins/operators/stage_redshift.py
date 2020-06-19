@@ -5,7 +5,13 @@ from airflow.contrib.hooks.aws_hook import AwsHook
 
 
 class StageToRedshiftOperator(BaseOperator):
+    """
+    This class copies the data from the s3 bucket
+    and loads them to the redshift tables.
+    """
+    
     ui_color = '#FFC0CB' 
+    
     @apply_defaults
     def __init__(self,
                  redshift_conn_id,

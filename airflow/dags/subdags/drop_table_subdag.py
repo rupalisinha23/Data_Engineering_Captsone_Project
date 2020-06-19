@@ -8,6 +8,9 @@ def drop_table_subdag(parent_dag_name,
                           task_id,
                           redshift_conn_id,
                           *args, **kwargs):
+    """
+    This function is to drop the tables if they already exist in redshift.
+    """
     dag = DAG(
             f"{parent_dag_name}.{task_id}",
         **kwargs)

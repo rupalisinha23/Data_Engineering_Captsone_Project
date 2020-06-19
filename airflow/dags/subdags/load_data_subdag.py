@@ -15,13 +15,8 @@ def load_data_subdag(
         redshift_conn_id,
         *args, **kwargs):
     """
-    A python function with arguments, which creates a dag
-    :param parent_dag_name: imp ({parent_dag_name}.{task_id})
-    :param task_id: imp {task_id}
-    :param redshift_conn_id: {any connection id}
-    :param args: {verbose}
-    :param kwargs: {verbose and context variables}
-    :return:
+    This function is create a subdag for loading the data from s3 buckets to
+    the redshift tables.
     """
     dag = DAG(
         f"{parent_dag_name}.{task_id}",
@@ -135,16 +130,7 @@ def load_data_subdag(
     def parquet_to_redshift(table, s3_bucket, s3_key, iam_role,
                             sql_stmt, redshift_conn_id, **kwargs):
         """
-        This function reads parquet files and copies them to redshift
-        schema.db
-        :param table:
-        :param s3_bucket:
-        :param s3_key:
-        :param iam_role:
-        :param sql_stmt:
-        :param redshift_conn_id:
-        :param kwargs:
-        :return:
+        This function reads parquet files and copies them to redshift database dev.
         """
         redshift = PostgresHook(postgres_conn_id=redshift_conn_id)
         logging.info("Copying data from S3 to Redshift")

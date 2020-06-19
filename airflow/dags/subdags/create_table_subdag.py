@@ -11,6 +11,9 @@ def create_table_subdag(parent_dag_name,
     dag = DAG(
             f"{parent_dag_name}.{task_id}",
         **kwargs)
+    """
+    This function is to create tables in the redshift.
+    """
     
     create_us_demograph_table = PostgresOperator(
         task_id="create_us_demograph_table",

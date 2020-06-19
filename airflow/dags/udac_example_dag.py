@@ -182,6 +182,7 @@ run_quality_checks = DataQualityOperator(
 end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)    
 
 
+# define the connections of operators
 start_operator >> us_demograph_preprocess
 start_operator >> airport_preprocess
 start_operator >> temperature_preprocess

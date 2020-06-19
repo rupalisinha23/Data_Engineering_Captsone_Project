@@ -3,6 +3,9 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 class DataQualityOperator(BaseOperator):
+    """
+    This class is to perform the data quality checks on the redhsift tables.
+    """
 
     ui_color = '#FFC0CB' 
 

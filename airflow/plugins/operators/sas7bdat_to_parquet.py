@@ -10,6 +10,10 @@ import os
 
 
 class SAS7ToParquet(BaseOperator):
+    """
+    This class performs pre-process steps for the immigration data and uses pyspark for it.
+    Then it converts the data to parquet format.
+    """
 
     ui_color = '#89DA59'
 
@@ -24,7 +28,7 @@ class SAS7ToParquet(BaseOperator):
         self.output_path = output_path
 
     def execute(self, context):
-        logging.info("Creating spark session ...")
+        logging.info("Creating spark session.")
         spark = SparkSession.builder \
         .config("spark.jars.packages",
                 "saurfang:spark-sas7bdat:2.0.0-s_2.11") \
@@ -35,7 +39,7 @@ class SAS7ToParquet(BaseOperator):
         sc = spark.sparkContext
 
         # column names
-        logging.info('Defining column names and resulting schema ... ')
+        logging.info('Defining column names and resulting schema.')
         columns = ['cicid',
                    'i94yr',
                    'i94mon',
@@ -99,7 +103,7 @@ class SAS7ToParquet(BaseOperator):
 
         df_all = spark.createDataFrame(sc.emptyRDD(), schema)
 
-        logging.info('Reading sas7bdat files from disc.')
+        logging.info('Reading sas7bdat files from the worskpace.')
         onlyfiles = [join(self.input_path, f) for f in
                      listdir(self.input_path) if
                      isfile(join(self.input_path, f))]
@@ -112,7 +116,7 @@ class SAS7ToParquet(BaseOperator):
                                                     .select(columns)
                 df_all = df_all.union(df_temp)
 
-        logging.info('Writing parquet to disc. ')
+        logging.info('Writing parquet. ')
         if os.path.exists(self.output_path):
             shutil.rmtree(self.output_path)
 

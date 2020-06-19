@@ -7,6 +7,10 @@ import os
 
 
 class TemperaturePreprocessOperator(BaseOperator):
+    """
+    This class is to define the pre-processing steps for 
+    temperature data and puts them to pre_processed_csv folder.
+    """
 
     ui_color = '#89DA59'
 

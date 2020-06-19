@@ -8,6 +8,9 @@ from airflow.contrib.hooks.aws_hook import AwsHook
 
 
 class TransferToS3Operator(BaseOperator):
+    """
+    This class reads the data pre_processed_folder and copyies it to the s3 bucket.
+    """
 
     ui_color = '#87CEFA'
 

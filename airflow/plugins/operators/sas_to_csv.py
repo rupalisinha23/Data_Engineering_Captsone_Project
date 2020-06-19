@@ -7,6 +7,11 @@ import os
 
 
 class SASToCSVOperator(BaseOperator):
+    """
+    This class reads the label_description file given in the .SAS 
+    format and converts it to .csv files for the respective dimension 
+    tables starting from i94* naming convention.
+    """
 
     ui_color = '#89DA59'
 
