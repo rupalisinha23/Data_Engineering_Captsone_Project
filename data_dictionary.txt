@@ -1,0 +1,96 @@
+DIMENSION Table: temperature  https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data
+
+- average_temperature: average temperature in the city
+- average_temperature_uncertainty: average temperature uncertainty in the city
+- city: city name
+- country: country name
+- latitude: latitude coordinate of the city
+- longitude: longitude coordinate of the city
+- year: year when this temperature happened
+- month: month when this temperature happened
+
+DIMENSION Table: us_cities_demographics  https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/
+
+- city: city name
+- state: state name
+- median_age: median age in the city
+- male_population: total population number of males
+- female_population: total population number of females
+- total_population: total population number in the city
+- number_of_veterans: number of veterans present in the city
+- foreign_born: number of foreign 
+- average_household: average household size in the city
+- state_code: state code 
+- race: race
+- count: count 
+
+DIMENSION Table: airport_codes  https://datahub.io/core/airport-codes#data
+
+- ident: identification code
+- type: type of airport
+- name: name of the airport 
+- elevation_ft: elevation feat 
+- continent: continent
+- iso_country: country name 
+- iso_region: region name 
+- municipality: municiopality name
+- gps_code: gps code 
+- iata_code: iata code 
+- local_code:  local code 
+- coordinates: coordinates(latitude degree and longitude degree)
+
+DIMENSION Table: i94citres comes from the SAS file provided
+
+- country_code: country code
+- country_name: country name 
+
+DIMENSION Table: i94port comes from the SAS file provided
+
+- port_code: port code
+- port_city: port city
+- port_state: port state
+
+DIMENSION Table: i94visa comes from the SAS file provided
+
+- visa_code: visa code
+- visa_reason: visa reason 
+
+DIMENSION Table: i94mode comes from the SAS file provided
+
+- transport_code: transport code 
+- transport_name: transport name 
+
+DIMENSION Table: i94addr  comes from the SAS file provided
+
+- state_code: state code 
+- state_name: state name 
+
+FACT Table: immigration  https://travel.trade.gov/research/reports/i94/historical/2016.html
+
+- cicid
+- i94yr
+- i94mon
+- i94cit
+- i94res
+- i94port 
+- arrdate 
+- i94mode 
+- i94addr
+- depdate
+- i94bir 
+- i94visa
+- count
+- dtadfile
+- visapost
+- occup
+- entepd
+- entepu
+- matflag
+- biryear
+- dtaddto
+- gender
+- insnum
+- airline
+- admnum
+- fltno 
+- visatype
